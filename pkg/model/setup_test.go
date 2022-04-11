@@ -1,7 +1,7 @@
 package model
 
 import (
-	"github.com/deepaksinghvi/cdule/pkg"
+	"github.com/OUCHUNYU/cdule/pkg"
 	log "github.com/sirupsen/logrus"
 	"github.com/stretchr/testify/require"
 	"os"

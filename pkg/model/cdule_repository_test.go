@@ -11,8 +11,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/deepaksinghvi/cdule/pkg"
-	"github.com/deepaksinghvi/cdule/pkg/utils"
+	"github.com/OUCHUNYU/cdule/pkg"
+	"github.com/OUCHUNYU/cdule/pkg/utils"
 
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"

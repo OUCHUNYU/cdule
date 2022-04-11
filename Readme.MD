@@ -6,7 +6,7 @@ Users could use any database which is supported by [gorm.io](https://gorm.io/).
 
 ### To Download the cdule library
 ```
-go get github.com/deepaksinghvi/cdule
+go get github.com/OUCHUNYU/cdule
 ```
 
 ### Usage Instruction
@@ -101,7 +101,7 @@ cdule.StopWatcher()
 ### Demo Project
 This demo describes how cdule library can be used.
 
-https://github.com/deepaksinghvi/cduledemo
+https://github.com/OUCHUNYU/cduledemo
 
 
 ### Database Schema
@@ -147,8 +147,8 @@ EveryMonthOnSecondAtNoon = "0 0 12 2 * ?"
 * ORM usign the library [gorm.io](https://gorm.io/)
 
 ### Other Reports
-pkg.go.dev: https://pkg.go.dev/github.com/deepaksinghvi/cdule
+pkg.go.dev: https://pkg.go.dev/github.com/OUCHUNYU/cdule
 
-goreportcard.com: https://goreportcard.com/report/github.com/deepaksinghvi/cdule
+goreportcard.com: https://goreportcard.com/report/github.com/OUCHUNYU/cdule
 
 coverage service link: https://app.codecov.io/gh/deepaksinghvi/cdule

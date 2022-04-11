@@ -3,7 +3,7 @@ package model
 import (
 	"gorm.io/gorm"
 
-	"github.com/deepaksinghvi/cdule/pkg"
+	"github.com/OUCHUNYU/cdule/pkg"
 )
 
 type cduleRepository struct {

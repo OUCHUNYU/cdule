@@ -6,8 +6,8 @@ import (
 	"reflect"
 	"time"
 
-	"github.com/deepaksinghvi/cdule/pkg"
-	"github.com/deepaksinghvi/cdule/pkg/model"
+	"github.com/OUCHUNYU/cdule/pkg"
+	"github.com/OUCHUNYU/cdule/pkg/model"
 
 	"github.com/robfig/cron/v3"
 	log "github.com/sirupsen/logrus"
