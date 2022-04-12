@@ -16,7 +16,7 @@ TODO This TestJob schedule in main program is for the development debugging.
 
 func main() {
 	c := cdule.Cdule{}
-	c.NewCduleWithWorker("worker1")
+	c.NewCduleWithWorker("worker1", nil)
 
 	myJob := TestJob{}
 	jobData := make(map[string]string)

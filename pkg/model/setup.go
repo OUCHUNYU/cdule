@@ -31,28 +31,20 @@ type Repositories struct {
 }
 
 // ConnectDataBase to create a database connection
-func ConnectDataBase(param []string) (*pkg.CduleConfig, error) {
-	cduleConfig, err := readConfig(param)
-	if nil != err {
-		log.Error(err)
-		panic("Failed to read config!")
-	}
-	printConfig(cduleConfig)
+func ConnectDataBase(config *pkg.CduleConfig) *pkg.CduleConfig {
+	printConfig(config)
 	var db *gorm.DB
-	if cduleConfig.Cduletype == string(pkg.DATABASE) {
-		if strings.Contains(cduleConfig.Dburl, "postgres") {
-			db = postgresConn(cduleConfig.Dburl)
-		} else if strings.Contains(cduleConfig.Dburl, "mysql") {
-			db = mysqlConn(cduleConfig.Dburl)
+	if config.Cduletype == string(pkg.DATABASE) {
+		if strings.Contains(config.Dburl, "postgres") {
+			db = postgresConn(config.Dburl)
+		} else if strings.Contains(config.Dburl, "mysql") {
+			db = mysqlConn(config.Dburl)
 		}
-	} else if cduleConfig.Cduletype == string(pkg.MEMORY) {
-		db = sqliteConn(cduleConfig.Dburl)
+	} else if config.Cduletype == string(pkg.MEMORY) {
+		db = sqliteConn(config.Dburl)
 	}
 
-	logLevel := logger.Error
-	if len(param) > 2 && param[2] != "errorLogType" {
-		logLevel = logger.Info
-	}
+	logLevel := logger.Info
 	// Set LogLevel to `logger.Silent` to stop logging sqls
 	sqlLogger := logger.New(
 		l.New(os.Stdout, "\r\n", l.LstdFlags), // io writer
@@ -72,7 +64,7 @@ func ConnectDataBase(param []string) (*pkg.CduleConfig, error) {
 		CduleRepository: NewCduleRepository(db),
 		DB:              db,
 	}
-	return cduleConfig, err
+	return config
 }
 
 func postgresConn(dbDSN string) (db *gorm.DB) {
